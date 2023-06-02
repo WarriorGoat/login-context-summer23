@@ -1,15 +1,25 @@
 import React, {useContext} from 'react'
+import "./Home.css"
+
 
 import {ThemeContext} from '../context/ThemeContext'
 
 
+
 const Home = () => {
-    const contextDefault = useContext(ThemeContext)
+    
+    const {theme, setTheme, changeTheme} = useContext(ThemeContext)
+    // const changeTheme=()=>{
+    //   theme==="light" ? setTheme("dark"): setTheme("light")
+    // }
 
   return (
-    <div>
-        Home
-        <h3>{contextDefault}</h3>
+    <div className={theme}>
+       <h1>Home</h1> 
+        <h3>{theme}</h3>
+        <button onClick={changeTheme}>
+          Change Theme
+        </button>
     </div>
 
   )
