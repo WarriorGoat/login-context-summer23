@@ -1,0 +1,12 @@
+.dark{
+    color: rgb(175, 175, 248);
+    background-color: rgb(44, 36, 23);
+}
+
+.light{
+    color: blue;
+    background-color: blanchedalmond;
+}
+.login{
+    box-shadow: 2px gray;
+}
