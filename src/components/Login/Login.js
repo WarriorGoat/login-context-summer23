@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import { LoginContext, LoginDispatchContext } from "../../context/LoginContext";
-import {fetchLogin} from "../../context/loginContextHelper"
+import fetchLogin from "../../context/loginContextHelper"
 import "./login.css";
 
 const Login = () => {

@@ -1,6 +1,6 @@
 import Axios from "../lib/Axios"
 
-export const fetchLogin = async(dispatch, userData) => {
+const fetchLogin = async(dispatch, userData) => {
     try{
         console.log("---------user data--------")
         console.log (userData)
@@ -15,7 +15,9 @@ export const fetchLogin = async(dispatch, userData) => {
           })
     }
     catch(error){
-        console.log(error)
+        throw new Error(error)
     }
     
 }
+
+export default fetchLogin
