@@ -1,7 +1,7 @@
 import React, {createContext, useReducer} from "react"
 
-export const LoginContext = createContext(null)
-export const LoginDispatchContext = createContext(null)
+export const RegisterContext = createRegisterContext(null)
+export const RegisterDispatchContext = createRegisterContext(null)
 
 const initialState = {
     username: "",
@@ -30,21 +30,7 @@ const loginReducer = (login, action)=>{
                 ...action.data,
                 isAuth:true
             }
-            // console.log(action.data)
-            // if (action.data.password === "123456"){
-            //     return {
-            //         username: action.data.username,
-            //         password: action.data.password,
-            //         isAuth: true,
-            //         message: "Welcome " + action.data.username
-            //     }
-            // } else{
-            //     return {
-            //         username: action.data.username,
-            //         isAuth: false,
-            //         message: "User Not Authorized!"
-            //     }
-            // }
+           
 
         case "LOGOUT":
             return ({
@@ -53,12 +39,6 @@ const loginReducer = (login, action)=>{
                 isAuth: false,
                 message: "User Logged Out.  Please Log In!"
             })
-
-        case "ERROR":
-            return ({
-                error: `You have an error: ${action.error.response.message} ${action.error.response.data}`
-            })
-
         default : 
             return login
     }

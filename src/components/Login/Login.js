@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import { LoginContext, LoginDispatchContext } from "../../context/LoginContext";
-import fetchLogin from "../../context/loginContextHelper"
+import {fetchLogin, fetchRegister} from "../../context/loginContextHelper"
+// import fetchRegister from "../../context/registerContextHelper"
 import "./login.css";
 
 const Login = () => {
@@ -26,7 +27,7 @@ const Login = () => {
 
   return (
     <div id="login" className={theme}>
-      <h1>Login: </h1>
+      <h1>Login </h1>
       {login.isAuth ? (
         <>
           <h2>{login.message}</h2>
@@ -56,7 +57,9 @@ const Login = () => {
             value={input.password}
             onChange={onChangeHandler}
           />
-          <button>Register: </button>
+          <button
+          onClick={()=>fetchRegister(dispatch, input)}>Register
+          </button>
           <button
             onClick={()=>fetchLogin(dispatch, input)}>Log In
           </button>
